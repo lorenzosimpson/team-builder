@@ -13,10 +13,10 @@ const submitForm = event => {
     setMember({name: '', email: '', role: ''})
 
 }
+useEffect(()=>{ 
+    setMember(props.memberToEdit)
+}, [props.memberToEdit])
 
-// useEffect(() => {
-   
-//  })
     return (
         <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>

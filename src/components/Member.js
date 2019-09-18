@@ -17,7 +17,7 @@ const Member = props => {
                     <h1>{member.name}</h1>
                     <p>{member.email}</p>
                     <p>{member.role}</p>
-                    <button>Edit</button>
+                    <button onClick={() => props.setMemberToEdit(member)}>Edit</button>
                 </StyledMember>
             ))}
         </>

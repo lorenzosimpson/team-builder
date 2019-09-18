@@ -6,6 +6,7 @@ import Member from './components/Member';
 
 function App() {
   const [members, setMember] = useState([]);
+  const [memberToEdit, setMemberToEdit] = useState({})
 
   const addMember = member => {
     const newMember = {
@@ -17,12 +18,12 @@ function App() {
     setMember([...members, newMember])
   }
 
-  const [memberToEdit, setMemberToEdit] = useState([])
+  
 
   return (
     <div>
       <Form addMember={addMember} memberToEdit={memberToEdit}/>
-      <Member members={members}/>
+      <Member members={members} setMemberToEdit={setMemberToEdit}/>
     </div>
   )
 }
