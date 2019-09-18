@@ -20,7 +20,7 @@ function App() {
   return (
     <div>
       <MemberForm addMember={addMember}/>
-      <Member />
+      <Member members={members}/>
     </div>
   )
 }

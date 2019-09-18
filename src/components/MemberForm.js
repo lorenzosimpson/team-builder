@@ -6,9 +6,15 @@ const MemberForm = props => {
     const handleChange = event => {
         setMember({...member, [event.target.name]: event.target.value})
         console.log(member)
-    }
+    };
+const submitForm = event => {
+    event.preventDefault();
+    props.addMember(member);
+    setMember({name: '', email: '', role: ''})
+
+}
     return (
-        <form>
+        <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>
             <input type='text' name='name' onChange={handleChange} value={member.name}></input>
 
@@ -17,6 +23,8 @@ const MemberForm = props => {
 
             <label htmlFor='role'>Role</label>
             <input type='text' name='role' onChange={handleChange} value={member.role}></input>
+
+            <button type='submit'>Add Team Member</button>
 
         </form>
     );
