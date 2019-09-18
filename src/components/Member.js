@@ -1,14 +1,24 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledMember = styled.div`
+    width: 200px;
+    height: 200px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 2%;
+`
 
 const Member = props => {
     return (
         <>
             {props.members.map(member => (
-                <div key={member.id}>
+                <StyledMember key={member.id}>
                     <h1>{member.name}</h1>
                     <p>{member.email}</p>
                     <p>{member.role}</p>
-                </div>
+                    <button>Edit</button>
+                </StyledMember>
             ))}
         </>
     );

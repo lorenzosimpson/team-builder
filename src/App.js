@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MemberForm from './components/MemberForm';
+import Form from './components/Form';
 import Member from './components/Member';
 
 function App() {
@@ -17,9 +17,11 @@ function App() {
     setMember([...members, newMember])
   }
 
+  const [memberToEdit, setMemberToEdit] = useState([])
+
   return (
     <div>
-      <MemberForm addMember={addMember}/>
+      <Form addMember={addMember} memberToEdit={memberToEdit}/>
       <Member members={members}/>
     </div>
   )

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
-const MemberForm = props => {
+const Form = props => {
     console.log(props)
     const [member, setMember] = useState({name: '', email: '', role: ''})
     const handleChange = event => {
@@ -13,6 +13,10 @@ const submitForm = event => {
     setMember({name: '', email: '', role: ''})
 
 }
+
+// useEffect(() => {
+   
+//  })
     return (
         <form onSubmit={submitForm}>
             <label htmlFor='name'>Name</label>
@@ -30,4 +34,4 @@ const submitForm = event => {
     );
 }
 
-export default MemberForm;
+export default Form;
